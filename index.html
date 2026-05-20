@@ -13,6 +13,7 @@
 -->
 
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,18 +21,39 @@
     <!-- Marcador Markdown Simple (Marked.js) embutido via CDN para renderizar o markdown -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body>
 
     <!-- Sidebar Direito/Esquerdo -->
     <div class="sidebar">
+        <img src="favicon/logo.jpg" alt="Logo" class="logo">
         <div class="brand">
             Registros
             <span>Local-First</span>
         </div>
-        
+
         <div class="menu-sections">
-            <button class="menu-btn active" id="btn-menu-biografia" onclick="switchMode('biografia')">📖 Registro Principal</button>
+            <button class="menu-btn active" id="btn-menu-biografia" onclick="switchMode('biografia')">📖 Registro
+                Principal</button>
             <button class="menu-btn" id="btn-menu-ideias" onclick="switchMode('ideias')">💡 Caderno de Ideias</button>
         </div>
 
@@ -92,7 +114,8 @@
             <input type="text" id="current-title" class="note-title-input" value="Espaço de Registro">
             <div class="action-buttons">
                 <button class="btn" onclick="saveCurrentData()">💾 Salvar Local</button>
-                <button class="btn btn-danger" id="delete-btn" style="display: none;" onclick="deleteCurrentIdea()">🗑️ Excluir</button>
+                <button class="btn btn-danger" id="delete-btn" style="display: none;" onclick="deleteCurrentIdea()">🗑️
+                    Excluir</button>
                 <button class="btn" onclick="exportBackup()">📤 Exportar Backup</button>
             </div>
         </div>
@@ -100,7 +123,8 @@
         <!-- ÁREA DO EDITOR / PREVIEW -->
         <div class="editor-container" id="workspace-layout">
             <div class="editor-pane">
-                <textarea id="markdown-editor" oninput="updatePreview()" placeholder="Escreva aqui usando Markdown..."></textarea>
+                <textarea id="markdown-editor" oninput="updatePreview()"
+                    placeholder="Escreva aqui usando Markdown..."></textarea>
             </div>
             <div class="preview-pane" id="markdown-preview">
                 <!-- HTML gerado pelo Markdown entra aqui -->
@@ -108,6 +132,7 @@
         </div>
     </div>
 
-   <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
+
 </html>
