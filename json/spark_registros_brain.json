@@ -1,0 +1,34 @@
+{
+  "project_name": "Spark Registros",
+  "version": "1.0.0",
+  "architecture_type": "Local-First / Zero-Server Architecture",
+  "brand_ecosystem": "Linhagem SPARK",
+  "development_stack": {
+    "frontend": "HTML5 (semantic structure), CSS3 (modern responsive layouts)",
+    "logic_engine": "JavaScript Vanilla (ES6+), Web Storage API (LocalStorage)",
+    "markdown_parser": "Marked.js (CDN implementation)"
+  },
+  "product_concept": "A private, lightweight, serverless note-taking and diary application focused entirely on user data sovereignty. No databases, no external servers, and maximum performance.",
+  "interface_requirements": {
+    "theme": "Modern Dark Mode (deep grays, graphite surfaces, and emerald green accents)",
+    "layout": "Split-screen workspace (left: markdown editor input; right: real-time HTML preview output)",
+    "sidebar": {
+      "sections": ["Brand Header", "Navigation Tabs (Biography vs. Ideas)", "Dynamic Idea List", "Fixed Markdown Quick Reference Guide", "Backup Actions"],
+      "markdown_guide_rules": ["# Title", "## Subtitle", "**Bold**", "*Italic*", "- Bullet lists", "> Blockquotes"]
+    }
+  },
+  "functional_requirements": {
+    "persistence": "Save text content dynamically and independently to LocalStorage on user action.",
+    "keyboard_shortcuts": ["Ctrl + S triggers local saving function"],
+    "data_portability": {
+      "backup_format": "JSON export containing structured local data for safe offline storage",
+      "import_format": "JSON restoration capability to ensure 100% data control"
+    }
+  },
+  "default_onboarding_content": "# Bem-vindo ao Spark Registros\n### Seu espaço seguro para documentar sua história e suas ideias.\n\nEste é o seu diário e caderno de bordo pessoal, projetado com foco em privacidade, autonomia e soberania de dados. Tudo o que você escreve aqui é armazenado de forma 100% local no seu dispositivo, sem o uso de servidores externos (Zero-Server Architecture).\n\n## Como começar?\n- **Minha Biografia:** Use este espaço fixo para redigir sua trajetória profissional, seu manifesto ou seu diário oficial.\n- **Agenda de Ideias:** Clique em \"+ Nova\" na barra lateral para criar registros dinâmicos para seus insights de negócios, códigos, projetos ou atas de reunião.",
+  "code_style_guidelines": {
+    "modularity": "Separated into index.html, style.css, and script.js files.",
+    "documentation": "Every file must start with professional metadata comments identifying version 1.0.0, the component purpose, and the Linhagem SPARK copyright statement.",
+    "clean_code": "No inline styles, semantic tags, and descriptive variable names in Portuguese/English variables matching tech standards."
+  }
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+  PROPRIETÁRIO: Mauricio Spark
+  MARCA: SparkMauricio
+  PROJETO: Registros
+  VERSÃO: v1.0.0
+  LINHAGEM: SPARK
+  ============================================================================
+  Documento de Planejamento de Escopo
+  COPYRIGHT: © 2026 / Mauricio Spark. Todos os direitos reservados.
+  ============================================================================
+-->
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registros</title>
+    <!-- Marcador Markdown Simple (Marked.js) embutido via CDN para renderizar o markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Sidebar Direito/Esquerdo -->
+    <div class="sidebar">
+        <div class="brand">
+            Registros
+            <span>Local-First</span>
+        </div>
+        
+        <div class="menu-sections">
+            <button class="menu-btn active" id="btn-menu-biografia" onclick="switchMode('biografia')">📖 Registro Principal</button>
+            <button class="menu-btn" id="btn-menu-ideias" onclick="switchMode('ideias')">💡 Caderno de Ideias</button>
+        </div>
+
+        <div id="ideas-sidebar-section" style="display: none; flex-direction: column; flex: 1; overflow: hidden;">
+            <div class="notes-list-header">
+                <span>Seus Registros</span>
+                <button class="add-btn" onclick="createNewIdea()">+ Nova</button>
+            </div>
+            <div class="notes-list" id="notes-list-container">
+                <!-- Injetado dinamicamente -->
+            </div>
+        </div>
+
+        <!-- Markdown Guide Footer -->
+        <div class="markdown-guide">
+            <h4>📝 Como Usar Markdown</h4>
+            <div class="markdown-guide-item">
+                <code># Texto</code>
+                <span>Título Principal</span>
+            </div>
+            <div class="markdown-guide-item">
+                <code>## Texto</code>
+                <span>Subtítulo de Seção</span>
+            </div>
+            <div class="markdown-guide-item">
+                <code>**texto**</code>
+                <span>Texto em Negrito</span>
+            </div>
+            <div class="markdown-guide-item">
+                <code>*texto*</code>
+                <span>Texto em Itálico</span>
+            </div>
+            <div class="markdown-guide-item">
+                <code>- item</code>
+                <span>Lista com Marcador</span>
+            </div>
+            <div class="markdown-guide-item">
+                <code>&gt; texto</code>
+                <span>Bloco de Destaque</span>
+            </div>
+        </div>
+
+        <!-- Backup Section -->
+        <div class="backup-section">
+            <h4>⚙️ Dados / Backup</h4>
+            <button class="backup-btn" id="btnExport" onclick="exportBackup()">📤 Exportar Backup</button>
+            <button class="backup-btn" id="btnImport" onclick="importBackup()">📥 Importar Backup</button>
+        </div>
+    </div>
+
+    <!-- Hidden File Input for Import -->
+    <input type="file" id="fileInput" accept=".json" style="display: none;">
+
+    <!-- Workspace de Trabalho -->
+    <div class="workspace">
+        <!-- HEADER DINÂMICO -->
+        <div class="workspace-header">
+            <input type="text" id="current-title" class="note-title-input" value="Espaço de Registro">
+            <div class="action-buttons">
+                <button class="btn" onclick="saveCurrentData()">💾 Salvar Local</button>
+                <button class="btn btn-danger" id="delete-btn" style="display: none;" onclick="deleteCurrentIdea()">🗑️ Excluir</button>
+                <button class="btn" onclick="exportBackup()">📤 Exportar Backup</button>
+            </div>
+        </div>
+
+        <!-- ÁREA DO EDITOR / PREVIEW -->
+        <div class="editor-container" id="workspace-layout">
+            <div class="editor-pane">
+                <textarea id="markdown-editor" oninput="updatePreview()" placeholder="Escreva aqui usando Markdown..."></textarea>
+            </div>
+            <div class="preview-pane" id="markdown-preview">
+                <!-- HTML gerado pelo Markdown entra aqui -->
+            </div>
+        </div>
+    </div>
+
+   <script src="js/script.js"></script>
+</body>
+</html>
